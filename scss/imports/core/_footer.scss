@@ -1,0 +1,44 @@
+// css footer
+.footer{
+    background-color:$black-cl;
+    padding:24px 0;
+    .container{
+     
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+  
+    &-desc{
+        color:$white-cl;
+        font-family: pr;
+        font-size:12px;
+    }
+    .btn-scroll-top{
+        background-color:transparent;
+        text-transform: uppercase;
+        font-family: pr;
+        color:#fff;
+        border:0;
+        letter-spacing:0.5px;
+    }
+}
+
+@include xs{
+    .footer{
+        .container{
+            flex-direction: column !important;
+        }
+        .footer-desc{
+            margin-bottom:15px;
+        }
+        .btn-scroll-top{
+            margin-top:15px;
+        }
+        &-desc{
+            font-size:16px;
+        }
+    }
+    
+   
+}

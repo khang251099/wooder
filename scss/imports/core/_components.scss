@@ -1,0 +1,280 @@
+// css img, button, heading, title, input, elements, components...
+img {
+    max-width: 100%;
+    height: auto;
+    display:block;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    &.--center {
+        margin: 0 auto;
+        display: block;
+    }
+}
+a {
+    text-decoration: none;
+}
+.hidden{
+    display:none;
+}
+.info{
+    background-color:$black-cl;
+        &.news{
+            background-color:$white-cl !important;
+        }
+       
+    .desc{
+        
+        max-width:445px;
+        padding-bottom:5rem;
+        &.info{
+                &.gallery{
+                    color:$white-cl;
+                }
+                &.news{
+                    color:$gray-cl;
+                }
+        }
+    }
+    .news{
+        &__flex{
+
+        }
+        
+    }
+   
+}
+.title{
+    text-transform:uppercase;
+    &.--h1{
+        @include text(var(--h1-fs),pb,var(--h1-lh),$yellow-cl,uppercase);
+        margin-bottom:50px;
+        letter-spacing:0.2em;
+    }
+    &.--h2{
+        @include text(var(--h2-fs),pb,var(--h2-lh),$black-cl,uppercase);
+        letter-spacing:0.07em;
+        position:relative;
+        
+    }
+    &.--h3{
+        @include text(var(--h3-fs),pb,var(--h3-lh),$yellow-cl,uppercase);
+        letter-spacing:0.025em;
+        max-width:450px;
+    }
+    &.--h4{
+        @include text(18px,pb,1.4,$black-cl,uppercase);
+        position:relative;
+        margin-top:30px;
+        padding-top:30px;
+        @include overtext(2);
+        
+        &::before{
+            content:'';
+            width:83px;
+            height:3px;
+            background-color:$yellow-cl;
+            @include absoluteCenter('top');
+            top:2%;
+        }
+    }
+    
+}
+
+.info{
+    background-color:#000;
+    &-title{
+        padding-top:9.2rem;
+        font-size:40px;
+        text-transform:uppercase;
+        color:#fff;
+        font-family: pb;
+      
+        margin-bottom:2.5rem;
+    }
+
+    &-desc{
+        color:#fff;
+        max-width:445px;
+        line-height:1.4;
+        padding-bottom:5rem;
+    }
+   
+}
+.pt{
+    padding-top:90px;
+}
+.pb{
+    padding-bottom:100px;
+
+}
+
+.btn{
+    outline:none;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-transform: uppercase;
+    cursor: pointer;
+    &.--main{
+        padding:15px 50px;
+        margin:0 auto;
+        margin-top:50px;
+        background-color:transparent;
+        border:1px solid $white-cl;
+        @include transition(0.3s);
+        &:hover{
+            background-color:$yellow-cl;
+        }
+       
+        span{   @include text(14px,pb,0,$white-cl,uppercase);
+            letter-spacing: 0.2em; 
+        }
+    }
+    &.--foreign{
+        @include text(14px,pb,0,$black-cl,uppercase);
+        outline:none;
+        border:0;
+        background-color:transparent;
+        letter-spacing: 0.2em;
+        padding-right:10px;
+       display:block;
+        &.--watch{
+            margin:0;
+            padding:0;
+            color:$white-cl;
+            display:flex;
+            height:50px;
+            @include transition(0.3s);
+            &:hover{
+                background-color:$yellow-cl;
+            }
+        
+        }
+    }
+}
+.desc{
+    @include text(16px,pr,22px,$gray-cl,none);
+    letter-spacing: 0.025em;
+    margin-bottom:15px;
+    &.--ds{
+        color:$white-cl;
+        margin-top:15px;
+        letter-spacing:0.02em;
+        margin-bottom:40px;
+    }
+}
+.img{
+    object-fit:cover;
+    width:100%;
+    &-icon{
+        width:15%;
+        margin-left:15px;
+
+    }
+}
+// colors (tuỳ chỉnh)
+.--white-cl {
+    color: $white-cl;
+}
+.--black-cl {
+    color: $black-cl;
+}
+.-yellow-cl{
+    color: $yellow-cl;
+}
+
+
+// css article (nội dung chi tiết bài viết)
+article {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        // font-family: ib; // font bold
+        display: block;
+    }
+    h1 {
+        font-size: var(--h1-fs);
+        line-height: var(--h1-lh);
+        margin: 0 0 0.67rem 0;
+    }
+    h2 {
+        font-size: var(--h2-fs);
+        line-height: var(--h2-lh);
+        margin: 0 0 0.75rem 0;
+    }
+    h3 {
+        font-size: var(--h3-fs);
+        line-height: var(--h3-lh);
+        margin: 0 0 0.83rem 0;
+    }
+    h4 {
+        font-size: var(--h4-fs);
+        line-height: var(--h4-lh);
+        margin: 0 0 1.12rem 0;
+    }
+    h5 {
+        font-size: var(--h5-fs);
+        line-height: var(--h5-lh);
+        margin: 0 0 1.5rem 0;
+    }
+    h6 {
+        font-size: 0.67rem;
+        margin: 0 0 1.67rem 0;
+    }
+
+    p {
+        margin: 0 0 1.12rem 0;
+    }
+    strong {
+        // font-family: ib; // font bold
+    }
+    ol,
+    ul {
+        list-style: initial;
+        padding-left: 18px;
+    }
+    img {
+        display: inline-block;
+        height: auto;
+        overflow: hidden;
+        border-radius: 10px;
+        margin: 25px auto;
+    }
+    .video {
+        width: 100%;
+        height: 0;
+        padding-bottom: 56.25%;
+        position: relative;
+        margin: 25px auto;
+        iframe,
+        video {
+            position: absolute;
+            @include size(100%);
+            top: 0;
+            left: 0;
+        }
+    }
+    @include xs {
+        img {
+            margin: 20px auto;
+        }
+    }
+}
+
+.heading {
+    font-family: ib;
+    &.--h1 {
+        font-size: var(--h1-fs);
+        line-height: var(--h1-lh);
+    }
+    &.--h2 {
+        font-size: var(--h2-fs);
+        line-height: var(--h2-lh);
+    }
+}
