@@ -26,7 +26,7 @@
 
 <body class="homepage">
   <!-- HEADER -->
-  <header>
+  <header class="header">
 
     <div class="container-fluid">
       <div class="logo">
@@ -38,7 +38,7 @@
 
       <ul class="menu">
         <li class="menu-item ">
-          <a href="#slider" class="header-menu-link active --white-cl">Home</a>
+          <a href="#slider" class="header-menu-link active  --white-cl">Home</a>
         </li>
         <li class="menu-item">
           <a href="#products" class="header-menu-link --white-cl">Products</a>
@@ -66,9 +66,9 @@
           </a>
         </div>
         <div class="language__option">
-          <a href="javacript:void(0)">VN</a>
-          <a href="javacript:void(0)">JP</a>
-          <a href="javacript:void(0)">AU</a>
+          <a href="javascript:void(0)">VN</a>
+          <a href="javascript:void(0)">JP</a>
+          <a href="javascript:void(0)">AU</a>
         </div>
       </div>
       <div class="btnMenu hidden">
@@ -110,7 +110,7 @@
   <main class="mainwrapper">
     <section class="slider">
       <div class="slider__item-wrap">
-        <div class="slider__item">
+        <div class="slider__item active">
           <div class="slider__item-text">
             <h2 class="title --h1">Wooder</h2>
             <button class="btn --main">
@@ -121,17 +121,40 @@
 
           <img src="./images/img-slide-one.jpg" alt="img-slide-one" class="slider__item-img" />
         </div>
-        <div class="slider__item"></div>
-        <div class="slider__item"></div>
+        <div class="slider__item ">
+          <div class="slider__item-text">
+            <h2 class="title --h1">Wooder</h2>
+            <button class="btn --main">
+              <span>Learn More</span>
+              <img src="./images/img-arrow-right.png" class="img-icon" />
+            </button>
+          </div>
+
+          <img src="./images/img-slide-two.jpg" alt="img-slide-two" class="slider__item-img" />
+        </div>
+        <div class="slider__item ">
+          <div class="slider__item-text">
+            <h2 class="title --h1">Wooder</h2>
+            <button class="btn --main">
+              <span>Learn More</span>
+              <img src="./images/img-arrow-right.png" class="img-icon" />
+            </button>
+          </div>
+
+          <img src="./images/img-slide-three.jpg" alt="img-slide-three" class="slider__item-img" />
+        </div>
 
       </div>
 
       <div class="slider__bottom">
         <div class="container-fluid">
           <div class="slider__bottom-paging">
-            <p class="number">01</p>
+            <p class="number active">01</p>
+            <p class="number">02</p>
+            <p class="number">03</p>
+
             <ul class="paging">
-              <li></li>
+              <li class="active"></li>
               <li></li>
               <li></li>
             </ul>
@@ -190,7 +213,7 @@
               in their original intent. By creating new pieces made of reclaimed
               barnwood
             </p>
-            <div class="content__button decor">
+            <div class="content__button deco  r">
               <a href="#" class="btn --foreign">
                 <span>Learn more</span>
               </a>
@@ -217,7 +240,7 @@
               <div class="box-video">
 
                 <img src="./images/img-quality-one.jpg" alt="img-quality-one" class="image-item" />
-                <div class="play-button">
+                <div class="play-button" data-video-id="2ZjgZ1Jhy60">
                   <a href="#">
                     <img src="./images/img-play.png" alt="img-play-vid" class="image-play" />
                   </a>
@@ -231,8 +254,10 @@
               <div class="box-video">
                 <img src="./images/img-quality-two.jpg" alt="img-quality-two" class="image-item" />
 
-                <div class="play-button">
-                  <a href="#"><img src="./images/img-play.png" alt="img-play-vid" class="image-play" /></a>
+                <div class="play-button" data-video-id="PNc9xM4ArJE">
+                  <a href="#">
+                    <img src="./images/img-play.png" alt="img-play-vid" class="image-play" />
+                  </a>
 
                 </div>
                 <p class="video-txt">High-level Skills</p>
@@ -242,8 +267,10 @@
               <div class="box-video">
                 <img src="./images/img-quality-three.jpg" alt="img-quality-three" class="image-item" />
 
-                <div class="play-button">
-                  <a href="#"> <img src="./images/img-play.png" alt="img-play-vid" class="image-play" /></a>
+                <div class="play-button" data-video-id="GatNL0mmQGc">
+                  <a href="#">
+                    <img src="./images/img-play.png" alt="img-play-vid" class="image-play" />
+                  </a>
 
                 </div>
                 <p class="video-txt">Quality Products</p>
@@ -403,12 +430,24 @@
       <p class="footer-desc">&copy 2016 WOODER, Demo by CFD Circle</p>
       <a href="#">
         <img src="./images/img-logo.png" alt="img-logo" class="img-logo" /></a>
-      <button class="btn btn-scroll-top">
+      <button class="btn btn-top">
         <p>back to top</p>
       </button>
     </div>
-  </footer>
 
+  </footer>
+  <!--2ZjgZ1Jhy60-->
+  <!--GatNL0mmQGc-->
+  <!--cLWFPOkI-->
+  <div class="video-modal">
+    <div class="video">
+      <iframe width="560px" height="315px" src="https://www.youtube.com/embed/2ZjgZ1Jhy60" title="YouTube video player"
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+      <button class="close">X</button>
+    </div>
+
+  </div>
   <script type="text/javascript" src="dest/jsmain.min.js"></script>
   <script type="text/javascript" src="dest/main.js"></script>
 </body>

@@ -19,6 +19,7 @@ body {
     @include text(var(--body16-fs), pr, var(--body16-lh), $gray-cl, none); // tuỳ chỉnh
     background: $white-cl;
     position: relative;
+    scroll-behavior: smooth;
     .container-fluid {
         width: 100%;
         padding-right: var(--gap);

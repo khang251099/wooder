@@ -1,17 +1,64 @@
 // css navigator (Menu)
-@include xs{
+@include sm{
 header{
     .nav{
         width:100vw;
-        height:100vh;
-        background-color: $black-cl;
+        height:calc(100vh - var(--height-header));
+        background-color: $gray-cl;
         position:fixed;
-        top:0;
+        top:var(--height-header);
         left:0;
-        z-index:9999;
-        opacity:1;
+        z-index:10;
         pointer-events: none;
+        display:block;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        text-align:center;
+        z-index:100;
+        opacity: 0;
+        @include transition($t );
+        @include transform(translateX(100%));
+        &.active{
+            opacity:1;
+            pointer-events: auto;
+            @include transition(0.5s cubic-bezier(.17,.67,.83,.67));
+            @include transform(translateX(0));
+        }
+        ul{
+           
+             li{
+                padding:10px 0;
+             }
+        }
+        a{
+            text-transform: uppercase;
+            color:$white-cl;
+            font-family: pb;
+            &:hover{
+                color:$yellow-cl;
+            }
+        }
 
+    }
+    .btnMenu{
+        &.active{
+            &::before{
+                @include transform(rotate(45deg) translate(35%, -50%));
+                @include transition($t);   
+              }
+      
+              &::after{
+                  @include transform(rotate(-45deg) translate(27%, -24%));
+                  @include transition($t);
+              }
+              .toggle{
+                  opacity:0;
+                  @include transition($t);
+              }
+        }
+      
     }
 }
 }
+

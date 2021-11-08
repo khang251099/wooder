@@ -2,10 +2,14 @@
   /*Slider*/
   .slider {
     position: relative;
-    height: 100vh;
+    height: 100%;
     overflow: hidden;
     &__item {
       @include size(100%);
+      display:none;
+      &.active{
+       display:block;
+      }
       &-wrap {
         @include size(100%);
       }
@@ -43,11 +47,15 @@
           font-family: pb;
           position: relative;
           padding-left: 60px;
+          display:none;
+          &.active{
+            display:block;
+          }
+         
         }
         &::before {
           content: "";
-          width: 4.5rem;
-          height: 6px;
+         @include size(42.5px,3.34px);
           background-color: $yellow-cl;
         
           @include absoluteCenter("top");
@@ -93,7 +101,9 @@
           height: 1rem;
           border-radius: 50%;
           background-color: #303030;
-
+          &.active{
+            background-color:$yellow-cl;
+          }
           &:not(first-child) {
             margin-left: 1.5rem;
           }
@@ -116,7 +126,7 @@
         }
       }
     }
-  }
+  } 
   @include md {
     .slider {
       height: 100vh;
@@ -887,5 +897,47 @@
       }
     }
    
+  }
+}
+/*Video Modal*/
+.video-modal {
+  position:fixed;
+    z-index:100000;
+    top:0;
+    left:0;
+    @include size(100vw,100vh);
+    // display:flex;
+    justify-content: center;
+    align-items: center;
+     display:none;
+   pointer-events: auto;
+    &.active{
+    //  display:block;
+      pointer-events: auto;
+      @include transition($t);
+      // left:30%;
+      // top:20%;
+  }
+  .video {        
+      display:flex;
+      align-items:center;
+      background-color:$gray-cl;
+      justify-content:center;
+      @include size(100%);
+      max-width:610px;
+      max-height:380px;
+
+
+  .close {
+      border-radius: 50%; 
+      @include size(2%,5%);
+     position: absolute;
+     top: 18%;
+     right: 27%;
+      pointer-events: auto;
+      border:0;
+      font-family:pb;
+    
+      }
   }
 }
