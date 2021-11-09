@@ -1,191 +1,194 @@
 // css header
 
 .header {
-    height: var(--height-header);
-    background-image: linear-gradient(to bottom, #01010138, #ffffff1f);
-    width:100%;
-    position:fixed;
-    left:0;
-    top:0;
-    z-index:100;
-    &.active{
-        height:66px;
-        @include transition($t);
-        background-color:$black-cl;
-    }
-    .container-fluid {
+  height: var(--height-header);
+  background: linear-gradient(to bottom, #ffffff1f, #01010138);
+  &.active {
+    @include transition($t);
+    background-color: $black-cl;
+  }
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+
+  .container-fluid {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .menu {
+    display: flex;
+    
+    align-items: center;
+   
+    position: absolute;
+    left: 55%;
+    @include transform(translateX(-50%));
+    height: 100%;
+    // margin-left:-70px;
+    &-item {
+      
+      a {
+        @include text(1.5rem, pb, 2.7rem, $white-cl, uppercase);
+        letter-spacing: 0.025em;
+        opacity: 0.5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include transition(0.3s);
+        overflow: hidden;
         height: 100%;
+        padding:0 35px;
+        &.active {
+          opacity: 1;
+          color: $yellow-cl;
+          position:relative;
+          @include transition($t);
+            //   &:after{
+            //       content:'';
+            //       width: 100%;
+            //       height:1.66px;
+            //       background-color:$yellow-cl;
+            //       @include absoluteCenter('left');
+            //       bottom:0;
+            //   }
+        }
+      }
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+  .language {
+    height: 100%;
+    position: relative;
+    &.active {
+      @include transition($t);
+    }
+    &:hover {
+      .language__option {
+        display: block;
+      }
+    }
+    &__current {
+      height: 100%;
+      display: inline-flex;
+
+      &-item {
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        width:100%;
+        justify-content: center;
+        font-family: pb;
+        span {
+          padding-right: 5px;
+          display: block;
+          font-size: 15px;
+          font-family: pr;
+        }
+      }
     }
-    
+    &__option {
+      background-color: $white-cl;
+      width: 150px;
+      height: auto;
+      position: absolute;
+      padding: 20px;
+      left: -40%;
+      top: 0;
+      opacity: 0;
+      @include transform(translate(-66%, 50%));
+      pointer-events: none;
+      display: none;
+      &.active {
+        opacity: 1;
+        pointer-events: auto;
+        @include transition($t);
+      }
+      a {
+        color: $black-cl;
+        padding: 5px 0;
+        display: block;
+        text-align: right;
+        font-family: pb;
+        pointer-events: auto;
+        &:hover {
+          color: $yellow-cl;
+        }
+      }
+    }
+  }
+  .btnMenu {
+    @include size(40px, 22px);
+    z-index: 100;
+    position: relative;
+    &:before {
+      content: "";
+      width: 100%;
+      height: 2px;
+      background-color: $white-cl;
+      position: absolute;
+      top: 10%;
+    }
+    &:after {
+      content: "";
+      width: 100%;
+      height: 2px;
+      background-color: $white-cl;
+      position: absolute;
+      bottom: 10%;
+    }
+    .toggle {
+      width: 100%;
+      height: 2px;
+      background-color: $yellow-cl;
+      @include absoluteCenter("top");
+      display: block;
+    }
+  }
+
+  @include sm {
+    background-color: $black-cl;
+
     .menu {
-        display: flex;
-        // justify-content: space-between;
-        align-items: center;
-        // margin-left:calc(-1 * var(--spacing));
-        position:absolute;
-        left:55%;
-        @include transform(translateX(-50%));
-       height:100%;
-        &-item {
-          
-            a{
-                @include text(1.5rem, pb, 2.7rem, $white-cl, uppercase);
-                letter-spacing: 0.025em;
-                opacity: 0.5;
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                @include transition(0.3s);
-                overflow: hidden;
-                height:100%;
-                padding:0 35px;
-                &.active {
-                    opacity: 1;
-                        color: $yellow-cl;
-                }
-            }
-            &:hover {
-                opacity: 1;
-            }
-           
-        }
+      display: none;
     }
-   
-
-        .language {
-          
-            height:100%;
-            position:relative;
-            &.active{
-                   
-                    @include transition($t);
-            }
-            &:hover{
-                .language__option{
-                    display:block;
-                }
-                
-            }
-            &__current {
-                height:100%;
-                display:inline-flex;
-                
-                &-item{
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    font-family: pb;
-                    span{
-                        padding-right:5px;
-                        display:block;
-                        font-size:15px;
-                        font-family: pr;
-                    }
-                   
-                }
-               
-            }
-            &__option{
-                background-color:$white-cl;
-                width:150px;
-                height:auto;
-                position:absolute;
-                padding:20px;
-                left:-40%;
-                top:0;
-                opacity:0;
-                @include transform(translate(-66%,50%));
-                pointer-events:none;
-                display:none;
-                &.active{
-                    opacity: 1;
-                    pointer-events: auto;
-                    @include transition($t);
-            }
-                a{
-                    color:$black-cl;
-                    padding:5px 0;
-                    display:block;
-                    text-align:right;
-                    font-family: pb;
-                    pointer-events: auto;
-                    &:hover{
-                        color:$yellow-cl;
-                    }
-                }       
-
-            }
-        }
-        .btnMenu{
-              @include size(40px,22px);
-              z-index:100;
-              position:relative;
-               &:before{
-                    content:'';
-                    width:100%;
-                    height:2px;
-                    background-color:$white-cl;
-                    position:absolute;
-                    top:10%;
-                }
-                &:after{
-                    content:'';
-                    width:100%;
-                    height:2px;
-                    background-color:$white-cl;
-                    position:absolute;
-                    bottom:10%;
-                }
-            .toggle{
-                width:100%;
-                height:2px;
-                background-color:$yellow-cl;
-                @include absoluteCenter('top');
-                display:block;
-                
-            }
-        }
-    
-    @include sm{
-        .menu{
-            display:none;
-        }
-        .btnMenu{
-            display:block;
-        }
-        
-        
-    }   
-    @include md{
-        .menu-item{
-            a{
-                padding:0 20px;
-            }
-        }
+    .btnMenu {
+      display: block;
     }
-
-    @include xs{
-        .logo{
-            .header-logo{
-                width:80%;
-            }
-        }
-        .language{
-            span{
-                font-size: 14px;
-            }
-            &__option{
-                width:100px;
-                @include transform(translate(-60%,40%));
-                a{
-                    font-size:14px;
-                }
-            }
-        }
+  }
+  @include md {
+    img.header-logo {
+      width: 150px;
     }
-   
+    .menu-item {
+      a {
+        padding: 0 20px;
+      }
+    }
+  }
+
+  @include xs {
+    .logo {
+      .header-logo {
+        width: 80%;
+      }
+    }
+    .language {
+      span {
+        font-size: 14px;
+      }
+      &__option {
+        width: 100px;
+        @include transform(translate(-60%, 40%));
+        a {
+          font-size: 14px;
+        }
+      }
+    }
+  }
 }

@@ -83,13 +83,13 @@ $cubic: cubic-bezier(0.84, 0.13, 0.33, 0.97);
     --spacing:70px;
     @media (max-width: $sm-max) {
         // Tablet
-    }
+    }   
     @media (max-width: $xs-max) {
         // Mobile
-        --h1-fs: 3.6rem;
+        --h1-fs: 6rem;
         --h1-lh: 4.2rem;
 
-        --h2-fs: 2.8rem;
+        --h2-fs: 2.6rem;
         --h2-lh: 3.8rem;
 
         --h3-fs: 2.2rem;

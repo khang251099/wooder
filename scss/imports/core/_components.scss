@@ -8,6 +8,7 @@ img {
     -moz-user-select: none;
     -o-user-select: none;
     user-select: none;
+    -webkit-user-drag:none;
     &.--center {
         margin: 0 auto;
         display: block;
@@ -119,12 +120,18 @@ a {
     text-transform: uppercase;
     cursor: pointer;
     &.--main{
-        padding:15px 50px;
+        padding: 18px 50px;
+        width: 278px;
+        height: 50px;
         margin:0 auto;
         margin-top:50px;
         background-color:transparent;
         border:1px solid $white-cl;
         @include transition(0.3s);
+       @include xs{
+        width: 200px;
+        height:40px;
+       }
         &:hover{
             background-color:$yellow-cl;
         }

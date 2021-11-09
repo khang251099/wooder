@@ -10,7 +10,6 @@ header{
         left:0;
         z-index:10;
         pointer-events: none;
-        display:block;
         display:flex;
         align-items:center;
         justify-content:center;
@@ -26,7 +25,7 @@ header{
             @include transform(translateX(0));
         }
         ul{
-           
+           @include transform(translateY(-10%));
              li{
                 padding:10px 0;
              }

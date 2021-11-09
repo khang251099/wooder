@@ -21,6 +21,9 @@
 
   <link rel="stylesheet" href="dest/style.min.css">
   <link rel="stylesheet" href="dest/fonts.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 
@@ -53,11 +56,9 @@
           <a href="#news" class="header-menu-link --white-cl">News</a>
         </li>
         <li class="menu-item">
-          <a href="#faq" class="header-menu-link --white-cl">FAQ</a>
+          <a href="#faq" class="header-menu-link --white-cl">FAQs</a>
         </li>
       </ul>
-
-
 
       <div class="language">
         <div class="language__current">
@@ -80,22 +81,22 @@
       <nav class="nav hidden">
         <ul>
           <li>
-            <a href="#">Home</a>
+            <a href="#slider">Home</a>
           </li>
           <li>
-            <a href="#">Products</a>
+            <a href="#products">Products</a>
           </li>
           <li>
-            <a href="#">About</a>
+            <a href="#about">About</a>
           </li>
           <li>
-            <a href="#">Gallery</a>
+            <a href="#gallery">Gallery</a>
           </li>
           <li>
-            <a href="#">News</a>
+            <a href="#news">News</a>
           </li>
           <li>
-            <a href="#">FAQs</a>
+            <a href="#faq">FAQs</a>
           </li>
 
         </ul>
@@ -207,13 +208,16 @@
         </div>
         <div class="product decor ">
           <div class="content">
+
             <h3 class="title --h2 --right">Decor</h3>
             <p class="desc decor">
               Wooder utilizes materials otherwise left behind, rendered useless
               in their original intent. By creating new pieces made of reclaimed
               barnwood
             </p>
-            <div class="content__button deco  r">
+
+
+            <div class="content__button decor">
               <a href="#" class="btn --foreign">
                 <span>Learn more</span>
               </a>
@@ -231,10 +235,13 @@
       <!--Quality-->
       <section class="quality pt">
         <div class="container">
-          <h3 class="title --h2 --down">wooder – is quality</h3>
-          <p class="desc">We create unique design objects made of rare wood, specially
-            under the order.
-            Look at the short video about our work.</p>
+          <div class="content-text">
+            <h3 class="title --h2 --down">wooder – is quality</h3>
+            <p class="desc">We create unique design objects made of rare wood, specially
+              under the order.
+              Look at the short video about our work.</p>
+          </div>
+
           <div class="quality__video-list">
             <div class="quality__video-item">
               <div class="box-video">
@@ -323,6 +330,7 @@
 
       </div>
     </section>
+    <!--Gallery-->
     <section class="gallery">
       <div class="container">
         <h3 class="info-title">Gallery</h3>
@@ -349,7 +357,7 @@
         </div>
       </div>
     </section>
-
+    <!--News-->
     <section class="news pt pb">
       <div class="container">
         <div class="new-title">
@@ -357,7 +365,15 @@
           <p class="desc">We are a team of professionals in the wood processing and
             the creation of wooden furniture of the highest class</p>
         </div>
-        <div class="new-list">
+        <div class="new-btn">
+          <button class="btn active">
+            <p>Internal</p>
+          </button>
+          <button class="btn">
+            <p>External</p>
+          </button>
+        </div>
+        <div class="new-list active">
           <div class="new-item">
             <div class="new-img">
               <a href="#">
@@ -365,7 +381,9 @@
               </a>
             </div>
             <div class="new-content">
-              <h3 class="new-heading">Where does it come from?</h3>
+              <a href="#">
+                <h3 class="new-heading">Where does it come from?</h3>
+              </a>
               <p class="desc">Contrary to popular belief, Lorem Ipsum
                 is not simply random text. It has roots
                 in a piece of classical Latin literatur...</p>
@@ -379,8 +397,10 @@
             </div>
             <div class="new-content">
 
-              <h3 class="new-heading">There are many
-                variations of passages</h3>
+              <a href="#">
+                <h3 class="new-heading">There are many
+                  variations of passages</h3>
+              </a>
               <p class="desc">Contrary to popular belief, Lorem Ipsum
                 is not simply random text. It has roots
                 in a piece of classical Latin literatur...</p>
@@ -394,8 +414,63 @@
             </div>
             <div class="new-content">
 
-              <h3 class="new-heading">It is a long established
-                fact that a reader</h3>
+              <a href="#">
+                <h3 class="new-heading">It is a long established
+                  fact that a reader</h3>
+              </a>
+
+
+              <p class="desc new">Contrary to popular belief, Lorem Ipsum
+                is not simply random text. It has roots
+                in a piece of classical Latin literatur...</p>
+            </div>
+          </div>
+        </div>
+        <div class="new-list">
+          <div class="new-item">
+            <div class="new-img">
+              <a href="#">
+                <img src="./images/img-footer-one.jpg" alt="news-five">
+              </a>
+            </div>
+            <div class="new-content">
+              <a href="#">
+                <h3 class="new-heading">Where does it come from?</h3>
+              </a>
+              <p class="desc">Contrary to popular belief, Lorem Ipsum
+                is not simply random text. It has roots
+                in a piece of classical Latin literatur...</p>
+            </div>
+          </div>
+          <div class="new-item">
+            <div class="new-img">
+              <a href="#">
+                <img src="./images/img-footer-two.jpg" alt="news-six">
+              </a>
+            </div>
+            <div class="new-content">
+
+              <a href="#">
+                <h3 class="new-heading">There are many
+                  variations of passages</h3>
+              </a>
+              <p class="desc">Contrary to popular belief, Lorem Ipsum
+                is not simply random text. It has roots
+                in a piece of classical Latin literatur...</p>
+            </div>
+          </div>
+          <div class="new-item">
+            <div class="new-img">
+              <a href="#">
+                <img src="./images/img-footer-four.jpg" alt="news-sev">
+              </a>
+            </div>
+            <div class="new-content">
+
+              <a href="#">
+                <h3 class="new-heading">It is a long established
+                  fact that a reader</h3>
+              </a>
 
 
               <p class="desc new">Contrary to popular belief, Lorem Ipsum
@@ -406,7 +481,63 @@
         </div>
       </div>
     </section>
-    <section class="scroll pb">
+    <!--FAQ-->
+    <section class="faq">
+      <div class="container">
+        <div class="text__content">
+          <h2 class="title --h2">Faqs</h2>
+          <p class="desc">
+            Aspernatur facilis odio veniam. Placeat error similique laborum
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </p>
+        </div>
+        <div class="faq__item-wrap">
+          <div class="faq__item">
+            <button class="accordion">Do you offer any discounts?</button>
+            <div class="panel">
+              <p class="desc">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem alias ad impedit illum ratione explicabo
+                mollitia fuga eaque animi, accusamus, sunt facilis repellat, asperiores labore perferendis
+                necessitatibus perspiciatis. Autem, perspiciatis.
+              </p>
+            </div>
+          </div>
+          <div class="faq__item">
+            <button class="accordion">
+              Will you renew my subscription automatically?
+            </button>
+            <div class="panel">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem alias ad impedit illum ratione explicabo
+                mollitia fuga eaque animi, accusamus, sunt facilis repellat, asperiores labore perferendis
+                necessitatibus perspiciatis. Autem, perspiciatis.
+              </p>
+            </div>
+          </div>
+          <div class="faq__item">
+            <button class="accordion">Can I request a refund?</button>
+            <div class="panel ">
+              <p class="desc">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem alias ad impedit illum ratione explicabo
+                mollitia fuga eaque animi, accusamus, sunt facilis repellat, asperiores labore perferendis
+                necessitatibus perspiciatis. Autem, perspiciatis.
+              </p>
+            </div>
+          </div>
+          <div class="faq__item">
+            <button class="accordion">Where are you located?</button>
+            <div class="panel">
+              <p class="desc">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem alias ad impedit illum ratione explicabo
+                mollitia fuga eaque animi, accusamus, sunt facilis repellat, asperiores labore perferendis
+                necessitatibus perspiciatis. Autem, perspiciatis.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="scroll pb pt">
       <div class="scroll__list">
         <div class="scroll__list-item">
           <img src="./images/img-footer-one.jpg" alt="img-footer-one" />
@@ -436,17 +567,20 @@
     </div>
 
   </footer>
-  <!--2ZjgZ1Jhy60-->
-  <!--GatNL0mmQGc-->
-  <!--cLWFPOkI-->
   <div class="video-modal">
     <div class="video">
-      <iframe width="560px" height="315px" src="https://www.youtube.com/embed/2ZjgZ1Jhy60" title="YouTube video player"
-        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen></iframe>
-      <button class="close">X</button>
+      <div class="iframe">
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/2ZjgZ1Jhy60" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
     </div>
-
+    <div class="close"></div>
+  </div>
+  <div class="btn-to-top">
+    <i class="fas fa-angle-up"></i>
+    <p>top</p>
   </div>
   <script type="text/javascript" src="dest/jsmain.min.js"></script>
   <script type="text/javascript" src="dest/main.js"></script>

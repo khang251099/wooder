@@ -2,27 +2,56 @@
 
 const btnMenu = document.querySelector(".btnMenu");
 const nav = document.querySelector(".nav");
+let offsetHeightHeader = document.querySelector(".header").offsetHeight;
+const navmenus = document.querySelectorAll(".nav ul li a");
+
+function removeNav() {
+  btnMenu.classList.remove("active");
+  nav.classList.remove("active");
+}
+
+/*click nav mobile to section*/
+navmenus.forEach(function (val, index) {
+  const className = val.getAttribute("href").replace("#", "");
+  const section = document.querySelector(`.${className}`);
+  val.addEventListener("click", function (e) {
+    e.preventDefault();
+    window.scrollTo({
+      top: section?.offsetTop - offsetHeightHeader + 1,
+      behavior: "smooth",
+    });
+    removeNav();
+    val.classList.add("active");
+  });
+});
+
 btnMenu.addEventListener("click", function () {
   this.classList.toggle("active");
   nav.classList.toggle("active");
 });
 
-/*scroll change background*/
+/*Resize menu nav*/
+window.addEventListener("resize", function (e) {
+  if (this.innerWidth > 992) {
+    removeNav();
+  }
+});
+
 const header = document.querySelector(".header");
 const slider = document.querySelector(".slider");
-
+const heightSlider = slider.offsetHeight;
 const heightHeader = header.clientHeight;
-const heightSlider = slider.clientHeight;
-// header.addEventListener('scroll',function(){})
-document.onscroll = function () {
-  const scrollTop = window.pageYOffset;
-  //Khoáng cách scroll tính
-  if (scrollTop > heightSlider - heightHeader) {
+
+function changeBackground() {
+  const scrollY = window.pageYOffset;
+  if (scrollY > heightSlider - heightHeader) {
     header.classList.add("active");
   } else {
     header.classList.remove("active");
   }
-};
+}
+document.addEventListener("scroll", changeBackground);
+/*Change background header*/
 
 /*Jquery scroll change background*/
 
@@ -36,14 +65,12 @@ document.onscroll = function () {
 //   });
 // });
 
-/*Link active*/
-
 /*back to top*/
 const btnTop = document.querySelector(".btn-top");
 
 btnTop.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
-/*Link active*/
+/*Language*/
 
 const lang = document.querySelector(".language");
 const langOption = document.querySelector(".language .language__option");
@@ -81,7 +108,7 @@ btnPlay.forEach(function (val) {
     const id = val.getAttribute("data-video-id");
     iframe.setAttribute(
       "src",
-      `https://www.youtube.com/embed/${id}?autoplay=1`
+      `https://www.youtube.com/embed/${id}?autoplay=1&mute=1`
     );
     videoMod.style.display = "flex";
   });
@@ -103,14 +130,14 @@ videoMod.addEventListener("click", function (e) {
 /*Scroll to section */
 
 let menus = document.querySelectorAll(".menu-item  a");
-let offsetHeightHeader = document.querySelector(".header").offsetHeight;
+
 //offsetHeight lấy chiều cao phần tử bao gồm cả padding n border
 //clientHeight: lấy chiều cao phần tử bao gồm cả padding
 
 let sections = [];
 const removeMenuActive = () => {
-  menus.forEach(function (menuEle, index) {
-    menuEle.classList.remove("active");
+  menus.forEach(function (menuElement, index) {
+    menuElement.classList.remove("active");
   });
 };
 menus.forEach(function (element, index) {
@@ -182,15 +209,82 @@ btnPrev.addEventListener("click", function (e) {
   }
 });
 
+dotted.forEach(function (li, index) {
+  li.addEventListener("click", function (e) {
+    goTo(index);
+  });
+});
+
 function goTo(index) {
-  listItemSlider[currentSlider].classList.remove("active");
-  listItemSlider[index].classList.add("active");
   /*Dotted*/
   dotted[currentSlider].classList.remove("active");
   dotted[index].classList.add("active");
   /*Number*/
   number[currentSlider].classList.remove("active");
   number[index].classList.add("active");
+  /*Slider*/
+  listItemSlider[currentSlider].classList.remove("active");
+  listItemSlider[index].classList.add("active");
   currentSlider = index;
   showNumber(currentSlider + 1);
 }
+
+/*TOP*/
+const btnClickTop = document.querySelector(".btn-to-top");
+btnClickTop.addEventListener("click", function () {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});
+const decorSec = document.querySelector(".decor").offsetTop;
+
+window.addEventListener("scroll", function () {
+  const position = window.pageYOffset;
+  if (position > decorSec) {
+    btnClickTop.style.display = "block";
+  } else {
+    btnClickTop.style.display = "none";
+  }
+});
+
+/*Prevent  news heading*/
+const newHeadings = document.querySelectorAll(".news .new-heading");
+newHeadings.forEach(function (val, index) {
+  val.addEventListener("click", function (e) {
+    e.preventDefault();
+  });
+});
+
+/*Tab new*/
+
+const tabs = document.querySelectorAll(".new-btn .btn");
+const tab = document.querySelector(".new-btn .btn");
+const newItems = document.querySelectorAll(".new-list");
+
+tabs.forEach(function (tab, index) {
+  //get index lấy để element tương ứng
+  const newItem = newItems[index];
+
+  tab.addEventListener("click", function () {
+    document.querySelector(".new-btn .btn.active").classList.remove("active");
+    document.querySelector(".new-list.active").classList.remove("active");
+    this.classList.add("active");
+    newItem.classList.add("active");
+  });
+});
+
+/*FAQ*/
+
+const accordion = document.querySelectorAll(".faq__item .accordion");
+accordion.forEach(function (val, index) {
+  val.addEventListener("click", function () {
+    this.classList.toggle("active");
+    const panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+  });
+});
