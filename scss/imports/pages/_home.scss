@@ -694,6 +694,9 @@
           overflow: hidden;
           position: relative;
           @include transition( $t ease);
+          img{
+            cursor: pointer;
+          }
           &:before {
             content: "";
             @include size(100%);
@@ -704,6 +707,7 @@
             opacity: 0;
             z-index: 10;
             @include transition($t);
+            pointer-events:none;
           }
     
           &:hover{
@@ -743,6 +747,7 @@
            -moz-filter: grayscale(100%);
             @include transform(translate(-50%, -50%) scale(1));
             @include transition($t);
+            
           }
        
         }
@@ -750,6 +755,7 @@
           height: 100%;
           width: 100%;
           object-fit: cover;
+         
         }
       }
     }
@@ -1027,14 +1033,20 @@
       align-items:center;
       justify-content:center;
       @include size(100%);
+      height:0;
       max-width:900px;
       position:relative;
+      overflow: hidden;
       padding-bottom:37%;
     @include xs{
       padding-bottom:60%;
+      margin-left:20px;
+      margin-right:20px;
     } 
     @include sm{
       padding-bottom:50%;
+      margin-left:40px;
+      margin-right:40px;
     }
     
       height:0;
@@ -1091,3 +1103,58 @@
  
 }
 
+/*Modal image*/
+.image-modal{
+  position:fixed;
+    z-index:100;
+    top:0;
+    left:0;
+   @include size(100vw,100vh);
+    justify-content: center;
+    align-items: center;
+    display:none;
+    pointer-events: auto;
+    background-color:rgba(0,0,0,0.9);
+    &.active{
+      pointer-events: auto;
+      @include transition($t);
+  }
+  .image{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    @include size(100%);
+    max-width:700px;
+    height:0;
+    position:relative;
+    overflow: hidden;
+    padding-bottom:40%;
+    @include xs{
+      padding-bottom:70%;
+      margin-left:20px;
+      margin-right:20px;
+    }
+    @include sm{
+      padding-bottom:70%;
+    }
+    img{
+      @include midimg;
+    }
+
+  }
+  .close{
+    background:url('/images/close-button.svg') no-repeat center / cover;
+    background-size:14px;
+    @include size(50px);
+    border-radius: 50%;
+    position:absolute;
+    top:20px;
+    right:50px;
+    z-index:9999;
+    border:1px solid #ffff;
+    cursor:pointer;
+    @include sm{
+      top:100px;
+    }
+  }
+}
