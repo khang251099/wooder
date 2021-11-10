@@ -1,3 +1,5 @@
+
+window.onload=()=>{
 /*Nav mobile*/
 
 const btnMenu = document.querySelector(".btnMenu");
@@ -317,6 +319,7 @@ const sliderScroll = document.querySelector(".scroll .scroll__list");
 const progressBar = document.querySelector(".prog-bar-inner");
 
 let sliderGrabbed = false;
+
 sliderScroll.parentElement.addEventListener("scroll", (e) => {
   progressBar.style.width = `${getScrollPercentage()}%`;
 });
@@ -352,4 +355,6 @@ function getScrollPercentage() {
         sliderScroll.parentElement.clientWidth)) *
     100
   );
+}
+
 }

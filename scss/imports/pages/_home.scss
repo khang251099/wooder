@@ -315,6 +315,12 @@
               justify-content: flex-end !important;
               &::after {
                 left: 48%;
+                @include xxs{
+                  left:55%;
+                }
+               @media screen and (width:414px){
+                left:60% !important;
+               }
               }
             }
           }
